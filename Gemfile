@@ -41,5 +41,6 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'dotenv-rails'
 
 gem 'rspec', '3.0.0.rc1', group: [:development, :test]
