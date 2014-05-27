@@ -39,5 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 gem 'rspec', '3.0.0.rc1', group: [:development, :test]
