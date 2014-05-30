@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CloudCharity</title>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/html5shiv.js"></script>
+  <script src="../../assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+  <div class="container">
+
+    <div class="masthead">
+      <h3 class="text-muted">
+        Cloud Charity
+        <div class="pull-right">
+          <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn" %>
+          <% else %>
+            <%= link_to 'Log in/Sign up', new_user_session_path, class: "btn" %>
+          <% end %>
+        </div>
+      </h3>
+      <ul class="nav nav-justified">
+        <li class="active"><%= link_to 'Home', root_path %></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="jumbotron">
+      <h1>タイトルを入れてください</h1>
+      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+      <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+    </div>
+
+    <div class="row">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <p>&copy; Company 2014</p>
+    </div>
+
+  </div>
 
 </body>
 </html>
